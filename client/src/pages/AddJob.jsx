@@ -9,20 +9,23 @@ import customFetch from "../utils/customFetch";
 
 import Wrapper from "../assets/wrappers/DashboardFormPage";
 
-export const action = async ({ request }) => {
-  const formData = await request.formData();
-  const data = Object.fromEntries(formData);
+export const action =
+  (queryClient) =>
+  async ({ request }) => {
+    const formData = await request.formData();
+    const data = Object.fromEntries(formData);
 
-  try {
-    await customFetch.post("/jobs", data);
+    try {
+      await customFetch.post("/jobs", data);
 
-    toast.success("Job Created!");
-    return redirect("all-jobs");
-  } catch (error) {
-    toast.error(error?.response?.data?.msg);
-    return error;
-  }
-};
+      await queryClient.invalidateQueries(["jobs"]);
+      toast.success("Job Created!");
+      return redirect("all-jobs");
+    } catch (error) {
+      toast.error(error?.response?.data?.msg);
+      return error;
+    }
+  };
 
 const AddJob = () => {
   const { user } = useOutletContext();
