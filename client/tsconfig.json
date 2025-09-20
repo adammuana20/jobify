@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "esnext",
+    "types": ["vite/client"],
+    "allowJs": true, // set to false once fully migrated to TS
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "noEmit": true,
+
+    // Strict type safety
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "jsx": "react-jsx",
+
+    // Extra strictness
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}

@@ -37,7 +37,16 @@ app.use(express.static(path.resolve(__dirname, "./client/dist")));
 
 app.use(cookieParser());
 app.use(express.json());
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      useDefaults: true,
+      directives: {
+        "img-src": ["'self'", "data:", "https://res.cloudinary.com"],
+      },
+    },
+  })
+);
 app.use(mongoSanitize());
 
 app.use("/api/v1/jobs", authenticateUser, jobRoutes);
