@@ -17,13 +17,7 @@ const Landing = () => {
             job <span>tracking</span> app
           </h1>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus nisi
-            eos saepe assumenda nulla fugit facilis ullam tempora rerum, eius
-            dicta quia aliquam mollitia a voluptates. Eum quod iusto modi.
-            Mollitia magnam provident et perspiciatis minima voluptas rerum?
-            Delectus, necessitatibus repudiandae illum, corrupti, aspernatur non
-            vel consectetur vitae magni ipsam veritatis repellat nobis animi?
-            Quaerat nesciunt dolore rerum sapiente nemo.
+A fullstack job tracking app built with the MERN stack, featuring CRUD operations, search and filtering, and a dashboard for tracking application status. Includes user profile management with image uploads via Cloudinary. Built with React, Node.js, Express, and MongoDB following RESTful architecture.
           </p>
           <Link to="/register" className="btn register-link">
             Register
